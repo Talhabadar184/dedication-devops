@@ -3,9 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>TaskFlow - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <header>
+        <h1>TaskFlow</h1>
+        <p>Your Simple Task Management Solution</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="add-task.html">Add Task</a>
+        <a href="task-list.html">Task List</a>
+        <a href="task-detail.html">Task Detail</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <main>
+        <section class="welcome">
+            <h2>Welcome to TaskFlow Dashboard</h2>
+            <p>
+                Manage your tasks efficiently, track progress, and stay organized.
+                Use the navigation menu to add, view, and manage tasks.
+            </p>
+        </section>
+
+        <section class="summary-container">
+            <div class="summary-card">
+                <h3>Total Tasks</h3>
+                <p class="count">15</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Pending Tasks</h3>
+                <p class="count">6</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Completed Tasks</h3>
+                <p class="count">9</p>
+            </div>
+        </section>
+
+        <section class="recent-tasks">
+            <h2>Recent Tasks</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Complete DevOps Assignment</td>
+                        <td>High</td>
+                        <td>Pending</td>
+                        <td>20 June 2026</td>
+                    </tr>
+
+                    <tr>
+                        <td>Prepare Project Presentation</td>
+                        <td>Medium</td>
+                        <td>Completed</td>
+                        <td>18 June 2026</td>
+                    </tr>
+
+                    <tr>
+                        <td>Review Pull Requests</td>
+                        <td>Low</td>
+                        <td>Pending</td>
+                        <td>21 June 2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TaskFlow | DevOps Fundamentals Assignment 04</p>
+    </footer>
+
 </body>
 </html>
