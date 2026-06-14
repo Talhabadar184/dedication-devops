@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - About & Help</title>
+    <script>
+        // Dynamically load the CSS to ensure it loads on deployment (bypassing cache if necessary)
+        document.addEventListener("DOMContentLoaded", () => {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            // Use absolute or relative path that works robustly
+            link.href = 'style.css?v=' + new Date().getTime();
+            document.head.appendChild(link);
+        });
+    </script>
+    <style>
+        /* Basic fallback styles in case external CSS fails */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f7f6; color: #333; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1, h2 { color: #2c3e50; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        .guide-step { margin-bottom: 15px; padding: 15px; background: #e8f4f8; border-left: 4px solid #3498db; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>About TaskFlow</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="task-list.html">Tasks</a>
+                <a href="add-task.html">Add Task</a>
+                <a href="about.html">Help/About</a>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>What is TaskFlow?</h2>
+                <p>TaskFlow is a lightweight, intuitive task-management web application designed to help individuals and small teams keep track of their daily assignments, priorities, and deadlines.</p>
+            </section>
+
+            <section>
+                <h2>Usage Guide</h2>
+                <p>Follow these simple steps to get the most out of TaskFlow:</p>
+
+                <div class="guide-step">
+                    <strong>1. Dashboard (Home)</strong>
+                    <p>Start at the Home page to get a quick overview of your task statistics, including pending and completed task counts.</p>
+                </div>
+
+                <div class="guide-step">
+                    <strong>2. Adding a Task</strong>
+                    <p>Navigate to the "Add Task" page to create a new task. You can specify the title, a detailed description, priority (High/Medium/Low), and a due date.</p>
+                </div>
+
+                <div class="guide-step">
+                    <strong>3. Viewing the Task List</strong>
+                    <p>Go to the "Task List" to see all your tasks in a table format. Use the filters to quickly show All, Pending, or Completed tasks.</p>
+                </div>
+
+                <div class="guide-step">
+                    <strong>4. Managing Task Details</strong>
+                    <p>Click on any task from the list to view its full details. From the Task Detail page, you can mark the task as complete or delete it entirely.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
