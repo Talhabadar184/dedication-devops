@@ -4,16 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskFlow - Task Detail</title>
-    <script>
-        // Dynamically load the CSS to ensure it loads on deployment (bypassing cache if necessary)
-        document.addEventListener("DOMContentLoaded", () => {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            // Use absolute or relative path that works robustly
-            link.href = 'style.css?v=' + new Date().getTime();
-            document.head.appendChild(link);
-        });
-    </script>
+    <link rel="stylesheet" href="style.css?v=1.0">
     <style>
         /* Basic fallback styles in case external CSS fails */
         body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f7f6; color: #333; }
