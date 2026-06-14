@@ -12,16 +12,13 @@ jobs:
     environment: development
 
     steps:
-      # Step 1 – Checkout
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Step 2 – Deploy via Render Hook
       - name: Trigger Render Deployment
         run: |
-          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
 
-      # Step 3 – Confirm Deployment
       - name: Deployment Confirmation
         run: |
-          echo "Deployment triggered successfully at $(date -u)"
+          echo "Deployment completed successfully at $(date)"

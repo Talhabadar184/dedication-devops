@@ -8,39 +8,37 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    environment: development
 
     steps:
-      # Step 1 – Checkout
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Step 2 – Docker Login
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Step 3 – Build Image
       - name: Build Docker Image
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/dedication-devops:latest .
 
-      # Step 4 – Tag Image (latest + short SHA)
       - name: Tag Docker Image
         run: |
-          SHORT_SHA=${GITHUB_SHA::7}
+          SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
 
           docker tag \
-            ${{ secrets.DOCKERHUB_USERNAME }}/dedication-devops:latest \
-            ${{ secrets.DOCKERHUB_USERNAME }}/dedication-devops:$SHORT_SHA
+          ${{ secrets.DOCKERHUB_USERNAME }}/dedication-devops:latest \
+          ${{ secrets.DOCKERHUB_USERNAME }}/dedication-devops:$SHORT_SHA
 
-      # Step 5 – Push Image
       - name: Push Latest Tag
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/dedication-devops:latest
 
       - name: Push SHA Tag
         run: |
-          SHORT_SHA=${GITHUB_SHA::7}
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/dedication-devops:$SHORT_SHA
+          SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
+
+          docker push \
+          ${{ secrets.DOCKERHUB_USERNAME }}/dedication-devops:$SHORT_SHA
