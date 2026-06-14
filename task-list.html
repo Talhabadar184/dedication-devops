@@ -3,9 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task-list</title>
+    <title>Task List – TaskFlow</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
 </head>
 <body>
-    
+
+    <div class="container">
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="add-task.html">Add Task</a>
+            <a href="task-list.html">Task List</a>
+            <a href="task-detail.html">Task Detail</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <main>
+            <h1>Task List</h1>
+            
+            <div class="filters">
+                <button>All</button>
+                <button>Pending</button>
+                <button>Completed</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task Title</th>
+                        <th>Due Date</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="task-detail.html">Complete DevOps Assignment</a></td>
+                        <td>2026-06-20</td>
+                        <td class="priority-high">High</td>
+                        <td class="status-pending">Pending</td>
+                    </tr>
+                    <tr>
+                        <td><a href="task-detail.html">Write CI/CD Documentation</a></td>
+                        <td>2026-06-22</td>
+                        <td class="priority-medium">Medium</td>
+                        <td class="status-completed">Completed</td>
+                    </tr>
+                    <tr>
+                        <td><a href="task-detail.html">Setup GitHub Actions</a></td>
+                        <td>2026-06-18</td>
+                        <td class="priority-high">High</td>
+                        <td class="status-completed">Completed</td>
+                    </tr>
+                    <tr>
+                        <td><a href="task-detail.html">Review Dockerfile</a></td>
+                        <td>2026-06-25</td>
+                        <td class="priority-low">Low</td>
+                        <td class="status-pending">Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 TaskFlow. All rights reserved.</p>
+        </footer>
+    </div>
+
 </body>
 </html>
